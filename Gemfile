@@ -26,6 +26,7 @@ gem 'turbolinks'
 
 gem 'active_model_serializers', '~> 0.8.0'
 gem 'geocoder'
+gem 'rMeetup'
 
 
 group :doc do

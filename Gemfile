@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '1.9.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
 
@@ -27,6 +27,7 @@ gem 'turbolinks'
 gem 'active_model_serializers', '~> 0.8.0'
 gem 'geocoder'
 gem 'rMeetup'
+gem 'thin'
 
 
 group :doc do

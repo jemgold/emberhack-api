@@ -6,6 +6,7 @@ class Meetup
   end
 
   def fetch(options = {})
+    return if API_KEY.nil?
     options.reverse_merge!({key: API_KEY})
     query = []
     options.each do |key, value|

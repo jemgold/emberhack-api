@@ -5,18 +5,20 @@ class Event < ActiveRecord::Base
   def self.search(options = {})
     m = Meetup.new
     results = m.fetch(options)
-    results.each do |result|
-      e = Event.new
-      if result['venue']
-        e.latitude = result['venue']['lat']
-        e.longitude = result['venue']['lon']
-        e.address = "#{result['venue']['address_1']}".inspect
+    unless results.nil?
+      results.each do |result|
+        e = Event.new
+        if result['venue']
+          e.latitude = result['venue']['lat']
+          e.longitude = result['venue']['lon']
+          e.address = "#{result['venue']['address_1']}".inspect
+        end
+        e.title = result['name'].inspect
+        e.uid = result['id']
+        # e.description = result['description']
+        e.url = result['event_url']
+        next unless e.save
       end
-      e.title = result['name'].inspect
-      e.uid = result['id']
-      # e.description = result['description']
-      e.url = result['event_url']
-      next unless e.save
     end
   end
 end

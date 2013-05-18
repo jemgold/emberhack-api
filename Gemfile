@@ -28,6 +28,7 @@ gem 'active_model_serializers', '~> 0.8.0'
 gem 'geocoder'
 gem 'rMeetup'
 gem 'thin'
+gem 'httparty'
 
 
 group :doc do

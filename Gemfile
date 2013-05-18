@@ -25,6 +25,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 gem 'active_model_serializers', '~> 0.8.0'
+gem 'geocoder'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

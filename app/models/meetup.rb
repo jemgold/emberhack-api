@@ -12,7 +12,6 @@ class Meetup
       query << "#{key.to_s}=#{value}"
     end
     query = query.join('&')
-    binding.pry
     response = HTTParty.get("#{BASE_URL}?#{query}")
     JSON.parse(response.body)['results']
   end

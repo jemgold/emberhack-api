@@ -42,3 +42,34 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development do
+  gem 'rack-mini-profiler'
+  gem 'better_errors'
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+  gem 'bullet'
+end
+
+group :development, :test do
+  gem 'jazz_hands'
+  gem 'binding_of_caller'
+  gem 'rspec-rails', '~> 2.13'
+  gem 'factory_girl_rails'
+  gem 'rb-inotify', require: false  # Linux file notification
+  gem 'rb-fsevent', require: false  # OSX file notification
+  gem 'rb-fchange', require: false  # Windows file notification
+  gem 'terminal-notifier-guard'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'vcr'                         # record HTTP interactions
+  gem 'ffaker'                      # easy fake data
+  gem 'spork'                       # speedier tests
+  gem 'guard-rspec'                 # watch app files
+  gem 'guard-spork'                 # spork integration
+  gem 'database_cleaner'            # cleanup database in tests
+  gem 'shoulda'                     # model spec tester
+  gem 'webmock'
+end
